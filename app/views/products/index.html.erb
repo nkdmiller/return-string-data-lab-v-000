@@ -2,11 +2,13 @@
   <%= render partial: "product", locals: {product: product} %>
 <%end%>
 <script type="text/javascript" charset="utf-8">
-  $.("js-more").on('click', function(){
-     var id = $(this).data("id");
+$(function () {
+  $(".js-more").on('click', function() {
+    // get the id from the data attribute
+    var id = $(this).data("id");
     $.get("/products/" + id + "/description", function(data) {
       $("#body-" + id).text(data);
     });
-  });   
-  })
-</script>
+  });
+});
+</script> 
