@@ -20,6 +20,7 @@ class ProductsController < ApplicationController
         redirect_to product_path(@product)
     end
      def inventory
+       @product.find(params[:id])
         if @product.inventory > 0
             render plain: "true"
         else
