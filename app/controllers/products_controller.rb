@@ -3,3 +3,4 @@ class ProductsController < ApplicationController
     @products = Product
   end
 end
+-
