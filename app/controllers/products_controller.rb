@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
         redirect_to product_path(@product)
     end
      def inventory
-       @product.find(params[:id])
+       @product = Product.find(params[:id])
         if @product.inventory > 0
             render plain: "true"
         else
@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
         end
     end
      def description
-       @product.find(params[:id])
+       @product = Product.find(params[:id])
         render plain: @product.description
     end
      private
